@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Pulse Pilot Dashboard</title>
+  <link rel="stylesheet" href="style/index.css" />
+  <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="script/datahandler.js"></script>
+  <script src="script/app.js"></script>
+  <link rel="icon" href="/front/images/favicon_heart_rate_colored.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="sidebar-content">
+      <h2>Overview</h2>
+      <ul>
+        <li><a href="home.html" class="boxsidebar">Dashboard</a></li>
+        <li><a href="historysession.html" class="boxsidebar">Your Sessions</a></li>
+        <li><a href="document.html" class="boxsidebar">Documentations</a></li>
+        <li><a href="index.html" class="boxsidebar">Log Out</a></li>
+        <li>
+          <button class="c-stopbuttonpi" id="BtnStopPi">
+            Shutdown RaspberryPI
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h1 class="c-title"><button id="sidebarbutton" class="sidebarbutton">☰</button> Welcome <span
+        class="c-usernametitle" id="username"></span></h1>
+
+    <div class="c-sessionbuttons">
+      <div class="box actions">
+        <h2>Actions</h2>
+        <h3>Execute actions</h3>
+        <p>By pressing on the start button all the sensors will start reading in and will be displayed on the graphs.
+          Press the stopbutton to stop your session. Make sure to give your session a title!</p>
+        <hr />
+        <button class="c-startbutton js-startsession">Start Session</button>
+        <button class="c-stopbutton js-stopsession" id="BtnStopSession">
+          Stop Session
+        </button>
+      </div>
+
+
+    </div>
+
+    <div class="value-container">
+      <div class="row">
+        <div class="box w-33 js-average-bpm firstbox"></div>
+        <div class="box w-33 js-quality"></div>
+        <div class="box w-33 js-temperature lastbox"></div>
+      </div>
+    </div>
+
+    <div class="box js-chartbpm" style="filter: blur(2px);"></div>
+    <div id="bpm-overlay" class="bpm-chart-overlay">
+      <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 50px; color: #0252c8;"></i>
+    </div>
+
+    <div class="row">
+      <div class="box w-50 js-charttemp"></div>
+      <div class="box w-50 js-chartair"></div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="ModalStopPi" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="ClosePi">&times;</span>
+      <p>
+        Are you sure you want to close the RaspberryPi? This will stop the
+        program from running...
+      </p>
+      <button class="c-stopbuttonmodal js-shutdown">Shutdown</button>
+    </div>
+  </div>
+
+  <div id="ModalTitel" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="CloseTitel">&times;</span>
+      <p>
+        Give a title to your just finished session. This will help you
+        keep track of all your sessions!
+      </p>
+
+      <input type="text" class="userinputtitle" id="userInputTitle" placeholder="Evening Run" />
+      <div id="succesmessage"></div>
+      <button class="c-closemodal js-updatetitle">Update Title</button>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

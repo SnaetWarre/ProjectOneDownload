@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pulse Pilot Dashboard</title>
+    <link rel="stylesheet" href="style/sidebar.css" />
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script/datahandler.js"></script>
+    <script src="script/sidebar.js"></script>
+    <link rel="icon" href="/front/images/favicon_heart_rate_colored.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <h2>Overview</h2>
+            <ul>
+                <li><a href="home.html" class="boxsidebar">Dashboard</a></li>
+                <li><a href="historysession.html" class="boxsidebar">Your Sessions</a></li>
+                <li><a href="document.html" class="boxsidebar">Documentations</a></li>
+                <li><a href="index.html" class="boxsidebar">Log Out</a></li>
+                <li>
+                    <button class="c-stopbuttonpi" id="BtnStopPi">
+                        Shutdown RaspberryPI
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+  <div id="ModalStopPi" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="ClosePi">&times;</span>
+      <p>
+        Are you sure you want to close the RaspberryPi? This will stop the
+        program from running...
+      </p>
+      <button class="c-stopbuttonmodal js-shutdown">Shutdown</button>
+    </div>
+  </div>
+</body>
+
+</html>

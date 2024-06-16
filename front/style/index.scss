@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/*---------------------------------------/*
+ # SETTINGS
+/*---------------------------------------*/
+$dark-yellow: #ffdb55;
+$bg-color: #8c8d8e;
+$btn-color: #38434a;
+$btn-color-hover: #414e56;
+
+@keyframes move-left {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(-80px);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
+@keyframes move-right {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(80px);
+  }
+}
+@keyframes move-up {
+  100% {
+    bottom: 100.75px;
+  }
+}
+@keyframes move-down {
+  100% {
+    top: 100.75px;
+  }
+}
+@keyframes width-to-zero {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 11px;
+  }
+}
+
+/*---------------------------------------/*
+ # GENERIC
+/*---------------------------------------*/
+
+/*---------------------------------------/*
+ # ELEMENTS
+/*---------------------------------------*/
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #f8fbff;
+  transition: all 0.14s ease-in;
+}
+
+/*---------------------------------------/*
+ # OBJECTS
+/*---------------------------------------*/
+.o-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*---------------------------------------/*
+ # COMPONENTS
+/*---------------------------------------*/
+
+.c-startbutton {
+  background-color: rgb(43, 207, 43);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 1rem;
+
+  &:hover {
+    background-color: rgb(12, 166, 12);
+  }
+}
+
+.c-stopbutton {
+  background-color: rgb(207, 43, 43);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 1rem;
+
+  &:hover {
+    background-color: rgb(166, 12, 12);
+  }
+}
+
+.c-stopbuttonpi {
+  background-color: rgba(207, 43, 43, 0.8);
+  color: white;
+  padding: 5px 30px;
+  border: 2px solid rgb(207, 43, 43);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 20px;
+  margin-left: 0;
+  margin-right: 0;
+
+  margin-top: 300px;
+
+  &:hover {
+    background-color: rgb(166, 12, 12, 0.9);
+  }
+}
+
+/*---------------------------------------/*
+ # UTILITIES
+/*---------------------------------------*/
+
+.c-sessionbuttons {
+  display: flex;
+  justify-content: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #f8fbff;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 3px solid #ffffff;
+  width: 40%; /* Could be more or less, depending on screen size */
+  border-radius: 5px;
+}
+
+.c-stopbuttonmodal {
+  background-color: rgb(207, 43, 43);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 1rem auto;
+  display: block;
+
+  &:hover {
+    background-color: rgb(166, 12, 12);
+  }
+}
+
+.c-closemodal {
+  background-color: rgb(84, 207, 43);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 1rem auto;
+  display: block;
+
+  &:hover {
+    background-color: rgb(37, 108, 4);
+  }
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.box {
+  background: white;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.lastbox {
+  background: white;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.value-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-33 {
+  width: 33%;
+}
+
+hr {
+  opacity: 0.4;
+}
+
+.actions {
+  width: 100%;
+
+  h2 {
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-size: 20px;
+    color: #0252c8;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+#succesmessage.show {
+  background-color: rgba(0, 255, 26, 0.2);
+  color: green;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.CloseTitel {
+  cursor: pointer;
+}
+
+.ClosePi {
+  cursor: pointer;
+}
+
+/* Add this to your existing CSS */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 85%;
+  background-color: white;
+  padding: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 1;
+  margin-top: 82px;
+  border-radius: 5px;
+  margin-bottom: 5%;
+  margin-left: 25px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #0252c8;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar ul li a:hover {
+  color: #0252c8;
+}
+
+.container {
+  margin-left: 270px; /* Adjust to ensure there is enough space for the sidebar */
+  position: relative;
+}
+
+.bpm-chart-overlay {
+  position: absolute;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: -150px;
+}
+
+.sidebarbutton {
+  display: inline-flex; // Use inline-flex to make the button align nicely with other inline or inline-block elements
+  align-items: center; // Vertically center the content
+  justify-content: center; // Horizontally center the content
+  padding: 8px 12px; // Add some padding around the text
+  background-color: #0252c8; // A nice blue background color
+  color: #ffffff; // White text color
+  border: none; // No border
+  border-radius: 4px; // Rounded corners
+  font-size: 14px; // Reasonable font size
+  text-decoration: none; // Remove underline from links if any
+  cursor: pointer; // Change cursor to pointer on hover
+  margin: 5px; // Add some margin around the button
+  margin-right: 20px;
+
+  display: none;
+
+  &:hover {
+    background-color: #0242a2; // Darken the button a bit on hover
+  }
+
+  &:active {
+    background-color: rgb(2, 64, 155); // Even darker on click
+  }
+}
+
+.c-title {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+  margin-top: 20px;
+  color: #0252c8;
+  margin-bottom: 11px;
+}
+
+.c-usernametitle {
+  margin: 5px;
+}
+
+.boxsidebar {
+  background: white;
+  padding: 4px;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &:hover {
+    color: #0252c8;
+  }
+}
+
+/*---------------------------------------/*
+ # MEDIA QUERIES
+/*---------------------------------------*/
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sidebarbutton {
+    display: block;
+  }
+
+  .userinputtitle {
+    width: 120px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .w-33 {
+    width: 100%;
+  }
+
+  .w-50 {
+    width: 100%;
+  }
+
+  .box {
+    background: white;
+    padding: 15px;
+    margin-bottom: 0px;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .firstbox {
+    margin-top: 25px;
+  }
+
+  .lastbox {
+    margin-bottom: 25px;
+  }
+
+  .c-title {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    margin-top: 20px;
+    color: #0252c8;
+    font-size: 25px;
+    margin-bottom: 11px;
+  }
+}

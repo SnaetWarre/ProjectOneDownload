@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pulse Pilot Documentation</title>
+    <link rel="stylesheet" href="style/documentation.css">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+        integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+        crossorigin="anonymous"></script>
+    <script src="script/datahandler.js"></script>
+    <script src="script/documentation.js"></script>
+    <link rel="icon" href="/front/images/favicon_heart_rate_colored.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <h2>Overview</h2>
+            <ul>
+                <li><a href="home.html" class="boxsidebar">Dashboard</a></li>
+                <li><a href="historysession.html" class="boxsidebar">Your Sessions</a></li>
+                <li><a href="document.html" class="boxsidebar">Documentations</a></li>
+                <li><a href="index.html" class="boxsidebar">Log Out</a></li>
+                <li>
+                    <button class="c-stopbuttonpi" id="BtnStopPi">
+                        Shutdown RaspberryPI
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="page-title"><button id="sidebarbutton" class="sidebarbutton">☰</button>Pulse Pilot Documentation</h1>
+
+        <section class="doc-section">
+            <div class="doc-content">
+                <img src="../images/mockupeindopdracht.webp" alt="Description of image 1" class="doc-image">
+                <div class="doc-text">
+                    <h2>How to use this application?</h2>
+                    <p>To start off, you made it here already! Very impressive. To start the application you want to
+                        press on the green button on your dashboard.
+                        This will start the application and you will be able to see the data on the dashboard. If you
+                        want to stop the application, you can press the red button on the dashboard.
+                        If you want to see the data from the previous sessions, you can press on the "Your Sessions"
+                        button on the sidebar.
+                        If you want to log out, you can press on the "Log Out" button on the sidebar.
+                        If you want to shutdown the RaspberryPi, you can press on the "Shutdown RaspberryPI" button on
+                        the sidebar.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="doc-section">
+            <div class="doc-content reverse">
+                <img src="../images/Running.webp" alt="Description of image 2" class="doc-image">
+                <div class="doc-text">
+                    <h2>Why did I make this application?</h2>
+                    <p>I made this because I love working out. Thing with working out is that I love to visualize my
+                        progress and know that what I'm doing is safe
+                        I can see all my previous sessions and see how I've improved over time. I can also see if I'm
+                        pushing myself too hard and if I need to take a break.
+                        You can see that on the app but the machine will start vibrating and making noise if you go in
+                        the danger zone.
+                        I can also see if I'm not pushing myself hard enough and if I need to push myself more.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more sections as needed -->
+    </div>
+
+    <!-- The Modal -->
+    <div id="ModalStopPi" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="ClosePi">&times;</span>
+            <p>
+                Are you sure you want to close the RaspberryPi? This will stop the
+                program from running...
+            </p>
+            <button class="c-stopbuttonmodal js-shutdown">Shutdown</button>
+        </div>
+    </div>
+</body>
+
+</html>

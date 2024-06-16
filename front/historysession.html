@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pulse Pilot Sessions</title>
+    <link rel="stylesheet" href="style/historysession.css">
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+            integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+"
+            crossorigin="anonymous"></script>
+    <script src="script/datahandler.js"></script>
+    <script src="script/session.js"></script>
+    <link rel="icon" href="/front/images/favicon_heart_rate_colored.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <h2>Overview</h2>
+            <ul>
+                <li><a href="home.html" class="boxsidebar">Dashboard</a></li>
+                <li><a href="historysession.html" class="boxsidebar">Your Sessions</a></li>
+                <li><a href="document.html" class="boxsidebar">Documentations</a></li>
+                <li><a href="index.html" class="boxsidebar">Log Out</a></li>
+                <li>
+                    <button class="c-stopbuttonpi" id="BtnStopPi">
+                        Shutdown RaspberryPI
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <button id="sidebarbutton" class="sidebarbutton">☰</button>
+        <div class="session-container">
+            <div class="session-box">
+                <h1 class="session-title">Welcome <span id="username"></span></h1>
+                <div class="session-form-group">
+                    <label for="session" class="session-label">Choose a session:</label>
+                    <select class="js-sessionid session-select">
+                        <option value="">Choose a session you would like to watch</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-box js-chartbpmsession"></div>
+            <div class="chart-box js-charttempsession"></div>
+            <div class="chart-box js-chartairsession"></div>
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div id="ModalStopPi" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="ClosePi">&times;</span>
+          <p>
+            Are you sure you want to close the RaspberryPi? This will stop the
+            program from running...
+          </p>
+          <button class="c-stopbuttonmodal js-shutdown">Shutdown</button>
+        </div>
+      </div>
+</body>
+
+</html>

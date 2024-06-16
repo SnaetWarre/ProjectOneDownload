@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/*---------------------------------------/*
+ # SETTINGS
+/*---------------------------------------*/
+$dark-yellow: #ffdb55;
+$bg-color: #8c8d8e;
+$btn-color: #38434a;
+$btn-color-hover: #414e56;
+
+@keyframes move-left {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(-80px);
+  }
+  100% {
+    transform: translateX(-80px);
+  }
+}
+@keyframes move-right {
+  0% {
+    transform: none;
+  }
+  65% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(80px);
+  }
+}
+@keyframes move-up {
+  100% {
+    bottom: 100.75px;
+  }
+}
+@keyframes move-down {
+  100% {
+    top: 100.75px;
+  }
+}
+@keyframes width-to-zero {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 11px;
+  }
+}
+
+/*---------------------------------------/*
+ # GENERIC
+/*---------------------------------------*/
+
+/*---------------------------------------/*
+ # ELEMENTS
+/*---------------------------------------*/
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #f8fbff;
+  transition: all 0.14s ease-in;
+}
+
+/*---------------------------------------/*
+ # OBJECTS
+/*---------------------------------------*/
+.o-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/*---------------------------------------/*
+ # COMPONENTS
+/*---------------------------------------*/
+.boxsidebar {
+  background: white;
+  padding: 4px;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  &:hover {
+    color: #0252c8;
+  }
+}
+
+.c-startbutton {
+  background-color: rgb(43, 207, 43);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 1rem;
+
+  &:hover {
+    background-color: rgb(12, 166, 12);
+  }
+}
+
+.c-stopbutton {
+  background-color: rgb(207, 43, 43);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 1rem;
+
+  &:hover {
+    background-color: rgb(166, 12, 12);
+  }
+}
+
+/*---------------------------------------/*
+ # UTILITIES
+/*---------------------------------------*/
+
+.c-sessionbuttons {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f4f8;
+}
+
+.login-title {
+  color: #0252c8;
+  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.login-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+
+  .login-title {
+    color: #0252c8;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+
+  .login-form {
+    .login-form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+
+      .login-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #0252c8;
+        font-weight: bold;
+      }
+
+      .login-input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccd6dd;
+        border-radius: 5px;
+        font-size: 1rem;
+
+        &[type='date'] {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+
+    .login-button {
+      width: 110px; /* Example width */
+      height: 50px; /* Example height */
+      background-color: #0252c8;
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+
+      &:hover {
+        background-color: #023077;
+      }
+    }
+  }
+}
+
+#error.show {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: red;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 25px;
+  border-radius: 5px;
+}
